@@ -1,0 +1,68 @@
+
+/* Id */
+#navbar{
+    padding: 1em 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #8641BB;
+    text-align: left;
+    h1{
+        font-size: 1.1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid grey;
+    }
+    ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        text-decoration: none;
+        padding: 0;
+        a{
+            text-decoration: none;
+            .selected{
+                color: #ffffff;
+            }
+            .unselected{
+                color: grey;
+            }
+        }
+    }
+}
+
+.gallery{
+    display: grid;
+    img{
+        width: 14em;
+        height: auto;
+    }
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* Media Queries */
+
+@media(min-width: 411px){
+    #navbar{
+        nav{
+            display: flex;
+            flex-direction: row;
+            h1{
+                display: flex;
+                border: none;
+                padding-bottom: 0;
+            }
+            ul{
+                display: flex;
+                flex-grow: 1;
+                justify-content: flex-end;
+                li{
+                    padding-right: 1em;
+                }
+            }
+        }
+    }
+    .gallery{
+        img{
+            width: 20em;
+        }
+    }
+}

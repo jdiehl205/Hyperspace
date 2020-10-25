@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { gsap } from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import './App.css';
+import Home from './components/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import CreationsPage from './components/CreationsPage';import ContactPage from './components/ContactPage';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+export const MyContext = React.createContext(gsap)
+gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <MyContext.Provider value={gsap}>
+      <Router>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/creations' component={CreationsPage} />
+            <Route path='/contact' component={ContactPage}/>
+          </Switch>
+        </Router>
+    </MyContext.Provider>
+    </>
   );
 }
 
