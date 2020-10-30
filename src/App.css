@@ -203,6 +203,7 @@ ul .colorNav {
   }
   #about img {
     width: 30em;
+    height: 30em;
   }
   #creations {
     display: -webkit-box;
@@ -229,6 +230,7 @@ ul .colorNav {
   }
   #creations img {
     width: 30em;
+    height: 30em;
   }
   #contact {
     display: -webkit-box;
